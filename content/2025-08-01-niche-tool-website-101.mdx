@@ -1,0 +1,162 @@
+---
+title: "Building Niche Tool Websites: From Keyword Research to Sustainable Traffic"
+description: "A practical, step‑by‑step playbook for indie makers to build keyword‑driven utility sites—from keyword research and intent analysis to SEO pages, deployment, analytics, and promotion—with concrete examples."
+date: "September 1, 2025"
+author: "Indie10k"
+keywords: ["niche tools", "keyword research", "indie maker", "SEO", "website monetization", "traffic generation"]
+publishedTime: "2025-09-01T00:00:00.000Z"
+image: "/logo.png"
+---
+
+Want to build something that actually makes money? Stop building the next big social app and start building tiny tools that solve tiny problems. Seriously.
+
+I've watched too many indie makers spend months on "revolutionary" apps that get three users. Meanwhile, someone's making $2k/month from a simple password generator. Which sounds better to you?
+
+## Why These Little Tool Sites Actually Work
+
+Here's what nobody tells you about niche tools:
+
+- **People know what they want:** When someone searches "tip calculator," they don't want a social platform for restaurant reviews. They want to calculate tips.
+- **One job, done well:** You're not building Slack. You're building one thing that works perfectly.
+- **They stack up:** Build five tools that make $500/month each. Math is pretty clear on that one.
+- **Google can't kill you as easily:** Algorithm changes hurt, but if you've got ten sites, you're not dead from one hit.
+
+Before you start building, [validate your idea in 48 hours](/blog/2025-08-31-validate-website-idea-under-48-hours) first. Don't skip this part (trust me).
+
+## Step 1: Find Keywords That Actually Pay
+
+This is where most people mess up. They pick keywords because they "sound good" instead of doing the boring homework.
+
+Look for words that scream "I want a tool": Calculator, Generator, Converter, Checker, Planner, Tracker, Builder... you get it.
+
+Here's what I do:
+
+1. Throw these into Semrush (or whatever keyword tool you can afford)
+2. Filter for stuff that's not impossible: Volume ≥ 600, Difficulty ≤ 29, CPC ≥ $0.10
+3. Export everything to a spreadsheet because we're going to do some math
+
+**The KDROI Formula** (yeah, I made this up):
+
+```
+KDROI = (Search Volume × CPC) ÷ Keyword Difficulty
+```
+
+Higher KDROI = build this first. Lower KDROI = maybe later.
+
+### Real Example: Phone Number Generator
+
+Let me show you why this keyword is gold:
+
+- People actually search for it (consistently, not just during some random trend)
+- It has decent CPC, meaning companies pay to show ads for it
+- The competition isn't insane
+- I can build it in a weekend (generate formatted numbers = not rocket science)
+- Room to expand: different countries, bulk generation, API access
+
+See? Not complicated.
+
+## Step 2: Figure Out What People Actually Want
+
+Don't just build what YOU think they want. Look at the search results and figure out the different reasons people might search for your keyword.
+
+For phone number generator:
+- **Developers:** Need fake numbers for testing apps
+- **International users:** Want numbers in specific country formats  
+- **Researchers:** Want to understand how phone number formats work
+
+This means I need: main tool + country-specific pages + some educational content.
+
+## Step 3: Build the Simplest Thing That Works
+
+Here's where everyone overcomplications things. You don't need a fancy framework. You don't need a database. You need HTML, a button, and some JavaScript.
+
+```html
+<header>
+  <h1>Phone Number Generator</h1>
+  <nav>US • India • Brazil • Germany • Japan</nav>
+</header>
+<main>
+  <h2>US Phone Number Generator</h2>
+  <p>Generate valid US numbers for testing.</p>
+  <button>Generate</button>
+</main>
+```
+
+And yeah, make sure your value proposition is clear. [Here's how to write one that doesn't suck](/blog/2025-09-01-how-to-write-uvp-for-indie-projects).
+
+Your JavaScript can be embarrassingly simple:
+
+```javascript
+function generateChinaNumber() {
+  const prefix = '1';
+  const second = Math.floor(Math.random() * 7) + 3; // 3-9
+  const rest = Array.from({length: 9}, () => Math.floor(Math.random()*10)).join('');
+  return prefix + second + rest;
+}
+```
+
+That's it. That's the tool. It works.
+
+## Step 4: Connect Everything Together
+
+Here's the SEO part that actually matters:
+
+- Link from your homepage to every country page
+- Link from each country page back to the homepage and to related countries
+- Add some FAQ sections or format explanations
+
+Google likes when you make it clear how all your pages relate to each other. Don't be mysterious about it.
+
+## Step 5: Go Global (If It Makes Sense)
+
+If your analytics show people from Brazil using your English tool a lot, maybe translate it to Portuguese. Don't translate everything at launch—wait for the data to tell you where to focus.
+
+Keep the same CSS, just change the text. Don't overthink it.
+
+## Step 6: Get It Live
+
+1. Push to GitHub (because version control is good, even for simple sites)
+2. Deploy with Vercel (connects to GitHub, deploys automatically)
+3. Put Cloudflare in front for caching and SSL
+4. Submit your sitemap to Google Search Console
+
+This whole step should take like an hour, not a week.
+
+## Step 7: Watch the Numbers
+
+You need to know if this thing is working:
+
+- Google Analytics: basic traffic stats
+- Google Search Console: what people are searching for to find you
+- Conversion tracking: are people actually using your tool?
+
+If people visit but never use the tool, your tool sucks. Fix the tool.
+
+## Step 8: Get Your First Users
+
+Nobody will magically discover your site. You need to put in some effort:
+
+- Submit to tool directories (ProductHunt, Hacker News if it's genuinely useful)
+- Share in relevant communities (dev forums for developer tools)
+- Write supporting content ("Why phone number formats are different by country")
+
+Don't spam. Be helpful. People can smell desperation from miles away.
+
+## The Bigger Picture
+
+Once your tool gets traction, [turn that traffic into revenue](/blog/2025-08-31-steps-to-profitable-website). Here's what a realistic timeline looks like:
+
+- **Week 1:** Pick keywords, build MVP, make it work
+- **Week 2:** Add country pages, connect everything with links  
+- **Week 3:** Deploy, submit to Google, start getting backlinks
+- **Week 4:** Localize if needed, write supporting content, improve based on user feedback
+
+Then do it again with a different tool. And again. Each one gets easier.
+
+## The Honest Truth
+
+This isn't glamorous work. You're not changing the world. But you're solving real problems for real people and making real money doing it.
+
+Most indie makers want to build the next unicorn. Smart ones build tools that people actually pay for.
+
+Ready to stop building vanity projects and start building profit? [Indie10k](/) breaks this whole process down into weekly missions so you don't get overwhelmed or distracted by the next shiny thing.

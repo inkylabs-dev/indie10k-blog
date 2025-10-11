@@ -1,0 +1,109 @@
+---
+title: "I overbuilt my MRR calculator. Then I deleted 80% of it."
+date: "2025-09-07"
+author: "indie10k"
+tags: ["indie10k", "build in public", "indie hackers"]
+description: "I overbuilt my MRR calculator. Then I deleted 80% of it."
+keywords: ["indie10k", "build in public", "indie hackers"]
+publishedTime: "2025-09-07T00:00:00.000Z"
+slug: "2025-09-07-i-overbuilt-my-mrr-calculator-then-i-deleted-80-of-it-35jDHp9a0pmiW414ptvc"
+---
+
+I set out to build an “MRR calculator” for Indie10k.
+Version 0 looked impressive: CAC, LTV, NRR, GRR, expansion, contraction, plan mix, annual prepay normalization, dunning recovery… you name it.
+
+It also felt… wrong.
+
+Not because the math was bad, but because **nobody early-stage needs a cockpit of switches** to answer the only questions indie founders actually care about:
+
+- 
+*How many users do I need?*
+
+- 
+*How long until I hit $1k → $10k MRR (aka ramen profitability → quit-job money)?*
+
+So I scrapped it and started again.
+## The moment I realized I’d built the wrong thing
+
+I asked myself (first principles style):
+“If I could only keep **three inputs**, what would they be?”
+
+I wrote down:
+
+- 
+**Plan price ($/mo)**
+
+- 
+**New users per month**
+
+- 
+**Churn %** (optional, because most early projects don’t even know it yet)
+
+Everything else was either noise, investor-grade, or premature.
+## The core algorithm (nothing fancy)
+
+`New MRR   = NewUsers × PlanPrice Churn MRR = CurrentMRR × ChurnRate MRR_next  = CurrentMRR + NewMRR − ChurnMRR `
+
+Run that month over month, and you get **time to $1k/$5k/$10k** and **users required**.
+That’s the whole point.
+## What I deleted (and why)
+
+- 
+❌ Multi-plan pricing &amp; ARPA blending — great for boards, overkill for day 0.
+
+- 
+❌ CAC/LTV/NRR/ARR tiles — useful later; they obscured the one thing people want now.
+
+- 
+❌ Cohorts &amp; seasonality — I was cosplaying a data team, not serving indies.
+
+- 
+❌ CSV import &amp; dunning — fun, but yak-shave territory for an MVP.
+
+**What stayed:**
+
+- 
+✅ Three sliders + one goal
+
+- 
+✅ Milestone timeline ($100 → $1k → $10k)
+
+- 
+✅ A clean growth curve with milestone markers
+
+- 
+✅ One-click “turn this into a mission” for Indie10k users (numbers → action)
+
+## Example that made it “click”
+
+- 
+Plan: **$19/mo**
+
+- 
+New users: **10/mo**
+
+- 
+Churn: **3%/mo**
+
+The tool says: **$1k in ~7 months**, **$10k in ~28 months**.
+
+Not perfect. But **directionally true** and instantly motivating.
+## Why this is better (for indies)
+
+- 
+**Clarity &gt; completeness.** You don’t need 20 dials to start.
+
+- 
+**Momentum &gt; metrics.** Seeing a date on the horizon changes how you work this week.
+
+- 
+**Action &gt; analysis.** The projection turns into a concrete Indie10k mission, not just a screenshot.
+
+## Ship link
+
+If you want to try it (or tell me what’s missing), it’s live:
+
+👉 **Profitability Path Tool**
+[https://indie10k.com/tools/profitability-path?utm_source=indiehackers&amp;utm_medium=post&amp;utm_campaign=profitability_path_launch](https://indie10k.com/tools/profitability-path?utm_source=indiehackers&amp;utm_medium=post&amp;utm_campaign=profitability_path_launch)
+
+I’ll be in the comments answering Qs and collecting blunt feedback. If this helps you see your path to $1k, I’d love to hear it.

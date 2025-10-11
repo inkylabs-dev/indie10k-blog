@@ -1,0 +1,59 @@
+---
+title: "The Bug I Couldn’t See (Because I Was Too “Special”)"
+date: "2025-09-08"
+author: "indie10k"
+tags: ["indie10k", "build in public", "indie hackers"]
+description: "The Bug I Couldn’t See (Because I Was Too “Special”)"
+keywords: ["indie10k", "build in public", "indie hackers"]
+publishedTime: "2025-09-08T00:00:00.000Z"
+slug: "2025-09-08-the-bug-i-couldn-t-see-because-i-was-too-special-qkIzcmcha9B2VVDMTXLm"
+---
+
+Yesterday was a milestone: **first day I started cold-reaching Redditors** to test [Indie10k](https://indie10k.com) — my “growth gym” for indie hackers where you get 3 small tasks a day to keep momentum.
+
+One of the first testers replies:
+
+“The login is on a loop. I can’t get in.”
+
+Uh oh.
+
+I try it myself. Everything works perfectly. Smooth dashboard, no problem.
+But when I'm registering another account, it hits me: **I’m on the allowlist.**
+## The Sneaky Culprit
+
+Way back in the prototype phase, I had this flag:
+
+`USER_SYSTEM_BETA_ALLOWLIST`
+
+It let me (and a few friends) bypass login shenanigans. When I flipped the switch to open beta, I forgot to remove it.
+
+Result for new testers:
+
+- 
+Dashboard → 307 redirect to login
+
+- 
+Login → dashboard
+
+- 
+Dashboard → login again
+
+- 
+…repeat forever
+
+For me? Blissfully invisible.
+For everyone else? A hamster wheel of despair.
+## The Fix
+
+Once I deleted the allowlist hack,  redeploy in Vercel,  everything worked.
+Now testers can actually reach the dashboard and see the action card system instead of getting booted around in circles.
+## The Spark Question
+
+This is where I’m at: no tests at all, just hacking and shipping.
+I’m still in “does anyone like this?” mode, not “let’s make it bulletproof” mode.
+
+But this incident makes me wonder:
+👉 At what stage did *you* start adding tests?
+Do you wait until you know the product has legs, or do you add them early to avoid exactly this kind of silly bug?
+
+Would love to hear how others balance **speed vs. safety** at the early stage.

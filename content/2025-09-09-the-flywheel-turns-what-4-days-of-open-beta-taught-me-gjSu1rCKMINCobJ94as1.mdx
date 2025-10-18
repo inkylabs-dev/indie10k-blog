@@ -1,0 +1,34 @@
+---
+title: "The Flywheel Turns: What 4 Days of Open Beta Taught Me"
+date: "2025-09-09"
+author: "indie10k"
+tags: ["indie10k", "build in public", "indie hackers"]
+description: "The Flywheel Turns: What 4 Days of Open Beta Taught Me"
+keywords: ["indie10k", "build in public", "indie hackers"]
+publishedTime: "2025-09-09T00:00:00.000Z"
+slug: "2025-09-09-the-flywheel-turns-what-4-days-of-open-beta-taught-me-gjSu1rCKMINCobJ94as1"
+---
+
+**Flywheel is spinning.**
+
+It’s been four days since [Indie10k](https://indie10k.com)'s open beta. At first, I assumed I’d just see my own test clicks. Instead, strangers started showing up. That small shift—seeing traffic from people I don’t know—felt big. Like the project is taking its first real breath.
+
+I added a small feedback form in the corner. Only one submission so far, but it mattered. Enough to remind me this isn’t just theory anymore.
+
+Then the reality checks came.
+
+**Issue 1: Login loop.**
+
+Users were stuck bouncing between dashboard and login. I never saw it because my account was whitelisted. Fix was simple: remove a leftover env var, redeploy. But it was a reminder—what’s invisible to me can be very real for others.
+
+**Issue 2: Duplicate projects.**
+
+Turns out rapid clicks could spawn multiple projects. Likely a race condition. I added a front-end loading guard and a backend check. Critical problem, solved in one line plus one guardrail.
+
+**Issue 3: Blank first screen.**
+
+Someone said: “I see nothing, I don’t know what to do.” That one hit differently. Not a bug—just missing guidance. So now I’m working on a proper first-time user flow.
+
+It’s been a cycle of small highs and lows: relief when a fix works, frustration when I miss something obvious, encouragement when feedback comes in.
+
+But that cycle—that feedback → fix → feedback loop—is exactly what I wanted to reach. The flywheel is moving for [Indie10k](https://indie10k.com), even if only a few clicks at a time.

@@ -1,0 +1,31 @@
+---
+title: "Build Log: A Tiny Streak Bug in Calculating Streak! 🐞"
+date: "2025-10-19"
+author: "indie10k"
+tags: ["indie10k", "build in public", "indie hackers"]
+description: "Today I fixed a small but meaningful bug in Indie10k’s streak logic. The current behavior was: After 24 hours pass without a rep, your momentum pauses, and..."
+keywords: ["indie10k", "build in public", "indie hackers"]
+publishedTime: "2025-10-19T00:00:00.000Z"
+slug: "2025-10-19-build-log-a-tiny-streak-bug-in-calculating-streak-hHxIriInfIumCyEtluSP"
+---
+
+Today I fixed a small but meaningful bug in Indie10k’s streak logic.
+
+The current behavior was:
+
+After 24 hours pass without a rep, your momentum pauses, and your streak breaks.
+
+Sounds fine, right?
+But here’s the catch:
+
+A user could do a rep at **12:00 AM on Day 1**, and then another at **11:00 PM on Day 2**.
+That’s **47 hours apart**, but it should *still* count as a two-day streak.
+
+Instead, Indie10k treated it as a streak break.
+The math wasn't correct, and the logic wasn’t human.
+
+One user noticed this and sent me feedback — and I’m *really glad* they did.
+It’s a strong signal that people *care* about their momentum, not just their metrics.
+
+Fixing this wasn’t just a bug patch — it’s a reminder that **habits happen in rhythm, not in rigid timeboxes**.
+And that’s what [Indie10k](https://indie10k.com) is all about.

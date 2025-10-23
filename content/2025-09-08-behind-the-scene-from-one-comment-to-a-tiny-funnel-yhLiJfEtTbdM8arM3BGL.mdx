@@ -1,0 +1,94 @@
+---
+title: "Behind-The-Scene: From one comment to a tiny funnel"
+date: "2025-09-08"
+author: "indie10k"
+tags: ["indie10k", "build in public", "indie hackers"]
+description: "Behind-The-Scene: From one comment to a tiny funnel"
+keywords: ["indie10k", "build in public", "indie hackers"]
+publishedTime: "2025-09-08T00:00:00.000Z"
+slug: "2025-09-08-behind-the-scene-from-one-comment-to-a-tiny-funnel-yhLiJfEtTbdM8arM3BGL"
+---
+
+Somebody left me this comment on my last tool:
+
+“This is a great tool, is it possible to also include lifetime subscriptions, monthly visitors, bounce rate if possible… other than that it’s really a solid tool.”
+
+At first, my brain was like: *yes, add all the knobs!*
+Lifetime toggle! Bounce slider! Visitor types dropdown!
+And then I realized… I was about to build a **spreadsheets-from-hell simulator** instead of something people actually touch.
+## The “aha” moment
+
+I scribbled the funnel on a sticky note:
+
+**Traffic → Signups → Paid → New MRR → Steady-State**
+
+That’s it. Five boxes. Five dials. If you can’t explain your model in one napkin sketch, you’re doomed.
+
+So I asked: *Do lifetime subs really need their own input?* Nope, that’s just ARPU smoothed over 12 months.
+*Do I need bounce rate?* Nah, signup rate already tattles on your bounce.
+*Monthly visitors?* That’s just daily traffic × 30. Extra button = extra confusion.
+
+Rule of thumb I kept repeating: **if two inputs always multiply together, kill one.**
+## Defaults &gt; paralysis
+
+Most people don’t even know their signup or pay rates, so I baked in “don’t-embarrass-yourself” defaults:
+
+- 
+Signup rate: ~8% (slider range 5–10%)
+
+- 
+Pay rate: ~12% (slider range 5–20%)
+
+- 
+Net churn: 4% (because churn is the silent killer)
+
+- 
+ARPU: pick a round dollar, done
+
+And if you *do* know your signups/day, flip a toggle and skip the signup slider. Simple enough that you don’t need to ask in the comments.
+## The fun parts
+
+- 
+**Step Path UI**: big boxes, big numbers, arrows → it literally looks like the funnel we all draw on napkins.
+
+- 
+**Target helper**: type your dream MRR, it tells you how much traffic you actually need. (Prepare to cry.)
+
+- 
+**Bottleneck detector**: highlights if your signup or pay rate is the weakest link.
+
+- 
+**Presets**: Lean / Average / Aggressive. (Basically “me right now” vs. “me in my pitch deck.”)
+
+Math under the hood is laughably tiny:
+`\nnewMRR = (traffic × 30 × signupRate × payRate) × ARPU\nsteady = newMRR / churn\n`\nThat’s literally the whole thing.
+## Shipping it
+
+I nearly added an “advanced metrics” panel (cohort charts, lifetime toggles, blah blah) but forced myself to hit publish first.
+
+Reactions?
+
+- 
+“Now I actually see where I’m leaking.”
+
+- 
+“Didn’t know my rates, used defaults, still useful.”
+
+- 
+“The traffic needed for $10k MRR hurt my feelings but thanks.”
+
+Which is exactly the vibe I was going for. Brutal honesty, minimal pain.
+## Takeaways
+
+- 
+**More knobs ≠ more clarity.**
+
+- 
+**One bottleneck is better than 20 dashboards.**
+
+- 
+**Ship the napkin version first.**
+
+The comment that could drag me into feature creep actually gave me the best constraint: **keep it tiny, keep it shippable.**
+
+**Check it out here: **[**Traffic-to-MRR Path**](https://indie10k.com/tools/traffic-mrr-path)
